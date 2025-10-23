@@ -1,4 +1,4 @@
-function occureences(text, character) {
+function occurrences(text, character) {
     let count = 0;
     for (let i = 0; i < text.length; i++)
     {
@@ -10,4 +10,4 @@ function occureences(text, character) {
     return count;
 };
 
-console.log(occureences('sample text', 'e'));
+console.log(occurrences('sample text', 'e'));
