@@ -1,0 +1,11 @@
+{
+  "name": "ase_webtech",
+  "version": "1.0.0",
+  "description": "ASE Web Technologies Seminar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Visan Alexandru-Teodor",
+  "license": "ISC"
+}
