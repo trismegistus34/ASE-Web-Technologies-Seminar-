@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Find a Resource by ID</h1>
+
+    <form id="resourceForm">
+        <label for="resourceId">Enter Resource ID:</label>
+        <input type="number" id="resourceId" required/>
+        <button type="submit">Get Resource</button>
+    </form>
+
+    <h3>Result:</h3>
+    <p id="result"></p>
+</body>
+
+<script>
+    document.getElementById("resourceForm").addEventListener("submit", async (event) => 
+    {
+        event.preventDefault();
+
+        const id = document.getElementById("resourceId").value;
+        const resultElement = document.getElementById("result");
+
+        resultElement.textContent = "Loading...";
+
+        try {
+            const response = await fetch(`http://localhost:3000/api/resursa/${id}`);
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                resultElement.textContent = `Error: ${errorData.message}`;
+                return;
+            }
+
+            const data = await response.json();
+            resultElement.textContent = `Resource name: ${data.name}`;
+        } 
+        catch (error) {
+            resultElement.textContent = "Network error or server not reachable.";
+            console.error(error);
+        }
+    });
+</script>
+</html>

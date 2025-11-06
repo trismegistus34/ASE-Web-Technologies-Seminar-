@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add new contact:</h1>
+    <form id="form">
+        <label for="nameInput">Add name:</label>
+        <input type="text" id="nameInput" required/>
+        <label for="numberInput">Add number:</label>
+        <input type="number" id="numberInput" required/>
+        <button type="submit" id="submission">Add</button>
+    </form>
+
+    <table id="contactsTable">
+        <tr>
+            <th>Name</th>
+            <th>Telefon</th>
+        </tr>
+    </table>
+</body>
+
+<script>
+    window.onload = () => 
+    {
+        var form = document.getElementById("form");
+        var nameInput = document.getElementById("nameInput");
+        var numberInput = document.getElementById("numberInput");
+        var table = document.getElementById("contactsTable");
+
+        var formSubmitHandler = () => 
+        {
+            event.preventDefault();
+
+            var name = nameInput.value.trim();
+            var number = numberInput.value.trim();
+
+            var newRow = table.insertRow();
+            var nameCell = newRow.insertCell(0);
+            var numberCell = newRow.insertCell(1);
+
+            nameCell.textContent = name;
+            numberCell.textContent = number;
+
+            nameInput.value = "";
+            numberInput.value = "";
+        }
+
+        form.onsubmit = formSubmitHandler;
+    }
+</script>
+</html>

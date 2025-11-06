@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn0">Lanseaza Evenimentul!</button>
+</body>
+
+<script>
+    window.onload = () => {
+        const button = document.getElementById("btn0");
+
+        const myEvent = new Event('myEvent');
+
+        const myEventHandler = () => {
+            console.log("My Event has triggered.");
+        }
+
+        const clickEventHandler = () => {
+            console.log("The button was pressed.");
+            document.dispatchEvent(myEvent);
+        }
+
+        button.addEventListener("click", clickEventHandler);
+        document.addEventListener("myEvent", myEventHandler);
+    }
+</script>
+
+</html>
