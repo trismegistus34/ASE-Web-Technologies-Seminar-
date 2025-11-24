@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .chess-table {
+        display: grid;
+        grid-template-columns: repeat(8, 60px);
+        grid-template-rows: repeat(8, 60px);
+        border: 4px solid black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        width:480px;
+        background-color: rgb(222, 211, 181);
+    }
+
+    .chess-table div {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .chess-table div:nth-child(odd) {
+        background: black;
+    }
+
+    .chess-table div:nth-child(16n + 9),
+    .chess-table div:nth-child(16n + 11),
+    .chess-table div:nth-child(16n + 13),
+    .chess-table div:nth-child(16n + 15) {
+        background: rgb(222, 211, 181);
+    }
+
+    .chess-table div:nth-child(16n + 10),
+    .chess-table div:nth-child(16n + 12),
+    .chess-table div:nth-child(16n + 14),
+    .chess-table div:nth-child(16n + 16) {
+        background: black;
+    }
+
+</style>
+<body>
+    <div class="chess-table">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
