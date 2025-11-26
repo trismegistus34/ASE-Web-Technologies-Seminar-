@@ -16,9 +16,25 @@ let books = [new Book(1, "Dune", "sf", "Frank Herbert"),
 new Book(2, "Robinson Crusoe", "adventure", "Daniel Defoe"),
 new Book(3, "Foundation", "sf", "Asimov")]
 
+const logger = (req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+};
+
+app.use(logger);
+
+app.use((err, req, res, next) => {
+    console.log(err.stack);
+})
+
+app.use((err, req, res, next) => {
+    res.status(500).json({ Error: "Something broke!" });
+})
+
 bookRouter.route('/books')
     //Step 1 - GET request
     .get((req, res) => {
+        // throw new Error("Error");
         let filteredBooks = [];
         if (req.query.genre) {
             filteredBooks = books.filter(x => x.genre === req.query.genre)
