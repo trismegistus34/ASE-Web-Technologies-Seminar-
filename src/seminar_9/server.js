@@ -1,6 +1,5 @@
 import express from 'express';
 import sequelize from './sequelize.js'
-import Employee from './models/employee.js';
 import router from './routes/employees.js';
 
 const app = express();
